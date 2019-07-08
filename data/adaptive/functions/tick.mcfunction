@@ -1,5 +1,6 @@
 # Detect new players
 scoreboard players set @a adJoin 0
+execute as @a run execute unless score @s adQuit matches 0.. run scoreboard players set @s adQuit 1
 scoreboard players set @a[scores={adQuit=1..}] adJoin 1
 scoreboard players set @a[scores={adQuit=1..}] adQuit 0
 
