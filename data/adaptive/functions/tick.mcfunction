@@ -26,7 +26,7 @@ execute if score #adaptive_global adDiff matches 0.. run scoreboard players oper
 scoreboard players set #adaptive_global adCount 0
 scoreboard players set #adaptive_global adDiff 0
 execute as @a[scores={adDiff=1..3}] run scoreboard players add #adaptive_global adCount 1
-execute as @a[scores={adDiff=1..3}] run scoreboard players operation #adaptive_global adDiff = @s adDiff
+execute as @a[scores={adDiff=1..3}] run scoreboard players operation #adaptive_global adDiff += @s adDiff
 execute unless score #adaptive_global adCount matches 0 run scoreboard players operation #adaptive_global adDiff /= #adaptive_global adCount
 execute if score #adaptive_global adCount matches 0 run scoreboard players set #adaptive_global adDiff 2
 
