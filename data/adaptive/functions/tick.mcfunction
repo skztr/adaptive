@@ -19,7 +19,7 @@ execute as @a run scoreboard players operation @s adPrev = @s adDiff
 scoreboard players set @a[scores={adEasy=1..}] adDiff 1
 scoreboard players set @a[scores={adNormal=1..}] adDiff 2
 scoreboard players set @a[scores={adHard=1..}] adDiff 3
-scoreboard players set @a[scores={adUnset=1..}] adDiff 4
+scoreboard players reset @a[scores={adUnset=1..}] adDiff
 scoreboard players set @a adEasy 0
 scoreboard players set @a adNormal 0
 scoreboard players set @a adHard 0
