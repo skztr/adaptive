@@ -46,8 +46,9 @@ execute if score #adaptive_global adNotify matches 1 run scoreboard players set 
 
 # Who to Ask
 scoreboard players set @a adAsk 0
-# If the difficulty has changed, ask all players
-execute if score #adaptive_global adAsk matches 1 unless score #adaptive_global adDiff = #adaptive_global adPrev run scoreboard players set @a adAsk 1
+
+# If the difficulty has changed, ask all players who do not have a set difficulty
+execute if score #adaptive_global adAsk matches 1 unless score #adaptive_global adDiff = #adaptive_global adPrev as @a run execute unless score @s adDiff matches 1..3 run scoreboard players set @s adAsk 1
 
 # If any player has just joined (or rejoined) the server, ask them what their preference is
 execute if score #adaptive_global adAsk matches 1 run scoreboard players set @a[scores={adJoin=1}] adAsk 1
