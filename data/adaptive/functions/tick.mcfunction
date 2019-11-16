@@ -1,4 +1,8 @@
 # Detect new players
+# adQuit is set when the player leaves the game. If it is not defined at all,
+# that means the player is completely new. We pretend we had noticed them
+# leaving, in that case, so we can use the same "just joined" logic when that
+# happens.
 scoreboard players set @a adJoin 0
 execute as @a run execute unless score @s adQuit matches 0.. run scoreboard players set @s adQuit 1
 scoreboard players set @a[scores={adQuit=1..}] adJoin 1
